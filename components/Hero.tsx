@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ title, backgroundColor, buttonText }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl sm:text-5xl lg:text-6xl text-white font-extrabold leading-tight mb-4 text-center"
+            className="text-3xl sm:text-4xl lg:text-4xl text-white font-extrabold leading-tight mb-4 text-center"
           >
             {title}
           </motion.h1>
@@ -39,9 +39,10 @@ const Hero: React.FC<HeroProps> = ({ title, backgroundColor, buttonText }) => {
             <Button
               text={buttonText}
               variant="primary"
-              size="medium"
+              size="small"
               linkTo="/blog"
               onClick={handleButtonClick}
+              className="font-semibold rounded-md"
             />
           </motion.div>
         </div>

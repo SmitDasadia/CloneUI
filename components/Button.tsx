@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 interface ButtonProps {
   text: string;
+  className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "small" | "medium" | "large";
   onClick?: () => void;
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "medium",
   onClick,
   linkTo,
+  className
 }) => {
   const buttonStyles = {
     primary: "bg-blue-500 hover:bg-blue-600 text-white",
@@ -29,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     large: "py-4 px-7  text-lg",
   };
 
-  const buttonStyle = `rounded-xl font-semibold transition duration-300 ease-in-out transform hover:scale-105 ${buttonStyles[variant]} ${sizeStyles[size]}`;
+  const buttonStyle = `transition duration-300 ease-in-out transform hover:scale-105 ${buttonStyles[variant]} ${sizeStyles[size]} ${className}`;
 
   const handleClick = () => {
     if (onClick) {
