@@ -16,7 +16,7 @@ export default function Home() {
         Elegance Meets Speed in Our Modern React UI Library."
       />
 
-      <Hero title={"Craft Stunning Websites, Effortlessly.Elegance Meets Speed in Our Modern React UI Library."}   buttonText={"Get Started"} backgroundColor={"#030303"} />
+      <Hero title={"Craft Stunning Websites, Effortlessly.Elegance Meets Speed in Our Modern React UI Library."}   buttonText={"Get Started"} backgroundColor={"#030303"} isButton={true}/>
      
     </main>
   );

@@ -4,11 +4,19 @@ import Button from "@/components/Button";
 
 interface HeroProps {
   title: string;
+  subTitle?: string;
   backgroundColor: string;
   buttonText: string;
+  isButton?: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, backgroundColor, buttonText }) => {
+const Hero: React.FC<HeroProps> = ({
+  title,
+  backgroundColor,
+  buttonText,
+  subTitle,
+  isButton,
+}) => {
   const containerStyle = {
     background: backgroundColor,
   };
@@ -30,20 +38,30 @@ const Hero: React.FC<HeroProps> = ({ title, backgroundColor, buttonText }) => {
           >
             {title}
           </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-xl sm:text-2xl lg:text-3xl text-white font-semibold leading-tight mb-4 text-center"
+          >
+            {subTitle}
+          </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="p-5"
           >
-            <Button
-              text={buttonText}
-              variant="primary"
-              size="small"
-              linkTo="/blog"
-              onClick={handleButtonClick}
-              className="font-semibold rounded-md"
-            />
+            {isButton ? (
+              <Button
+                text={buttonText}
+                variant="primary"
+                size="small"
+                linkTo="/blog"
+                onClick={handleButtonClick}
+                className="font-semibold rounded-md"
+              />
+            ) : null}
           </motion.div>
         </div>
       </div>

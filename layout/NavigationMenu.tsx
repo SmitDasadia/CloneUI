@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { GrGithub } from "react-icons/gr";
@@ -23,10 +22,12 @@ const Navigation = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-xl">
           {/* <Image src="/path/to/your/logo.png" alt="Your Logo" width={100} height={40} /> */}
-          <h1 className="text-2xl font-bold text-blue-600 p-2">CloneUi</h1>
+          <Link href={"/"}>
+            <h1 className="text-2xl font-bold text-blue-600 p-2 ml-4">CloneUI</h1>
+          </Link>
         </div>
-       
-        <div className="md:hidden p-2">
+
+        <div className="md:hidden p-2 mr-4">
           <button className="text-blue-600 mr-4">
             <GrGithub size={28} />
           </button>
@@ -35,13 +36,24 @@ const Navigation = () => {
           </button>
         </div>
         <div className="hidden sm:flex sm:justify-center sm:items-center sm:mx-auto space-x-5">
-          <NavLink href="/docs" label="Docs" currentPath={router.pathname} />
+          <NavLink
+            href="/docs"
+            label="Docs"
+            currentPath={router.pathname}
+            className=" text-xl font-semibold"
+          />
           <NavLink
             href="/components"
             label="Components"
             currentPath={router.pathname}
+            className=" text-xl font-semibold"
           />
-          <NavLink href="/blog" label="Blog" currentPath={router.pathname} />
+          <NavLink
+            href="/blog"
+            label="Blog"
+            currentPath={router.pathname}
+            className=" text-xl font-semibold"
+          />
         </div>
       </div>
       <AnimatePresence>
@@ -104,7 +116,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   <Link href={href}>
     <p
       className={`text-white ${
-        currentPath === href ? "font-bold" : ""
+        currentPath === href ? "font-bold text-blue-800" : ""
       } ${className}`}
     >
       {label}
