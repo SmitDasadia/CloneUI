@@ -25,7 +25,7 @@ const Code: React.FC<CodeProps> = ({ children }) => {
 
   return (
     <div className="relative">
-      <pre className="bg-[#181818] rounded-md p-4 text-white">
+      <pre className="bg-[#181818] rounded-md p-4 text-white overflow-x-auto">
         <code>{children}</code>
       </pre>
       <button

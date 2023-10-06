@@ -23,7 +23,9 @@ const Navigation = () => {
         <div className="text-white text-xl">
           {/* <Image src="/path/to/your/logo.png" alt="Your Logo" width={100} height={40} /> */}
           <Link href={"/"}>
-            <h1 className="text-2xl font-bold text-blue-600 p-2 ml-4">CloneUI</h1>
+            <h1 className="text-2xl font-bold text-blue-600 p-2 ml-4">
+              CloneUI
+            </h1>
           </Link>
         </div>
 
@@ -40,21 +42,27 @@ const Navigation = () => {
             href="/docs"
             label="Docs"
             currentPath={router.pathname}
-            className=" text-xl font-semibold"
+            className=" text-xl font-semibold hover:text-blue-900"
           />
           <NavLink
             href="/components"
             label="Components"
             currentPath={router.pathname}
-            className=" text-xl font-semibold"
+            className=" text-xl font-semibold hover:text-blue-900"
           />
           <NavLink
             href="/blog"
             label="Blog"
             currentPath={router.pathname}
-            className=" text-xl font-semibold"
+            className=" text-xl font-semibold hover:text-blue-900"
           />
         </div>
+        <div className="hidden md:block p-2 mr-4">
+  <button className="text-blue-600 mr-4">
+    <GrGithub size={28} />
+  </button>
+</div>
+
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -115,8 +123,8 @@ const NavLink: React.FC<NavLinkProps> = ({
 }) => (
   <Link href={href}>
     <p
-      className={`text-white ${
-        currentPath === href ? "font-bold text-blue-800" : ""
+      className={` ${
+        currentPath === href ? "font-bold text-blue-800" : "text-white"
       } ${className}`}
     >
       {label}

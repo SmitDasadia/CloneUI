@@ -2,10 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import Sidebar from "@/layout/Sidebar";
+import ReusableHead from "@/components/Head";
 
 const DocsLayout: React.FC = ({}) => {
   return (
     <div className="flex bg-[#030303]">
+      <ReusableHead
+        title="CloneUi - Docs"
+      />
       {/* Left Sidebar (Visible only on md and lg screens) */}
       <Sidebar />
 
