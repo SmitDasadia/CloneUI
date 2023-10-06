@@ -153,6 +153,13 @@ const Sidebar = () => {
                   currentPath={router.pathname}
                   className="text-md font-semibold py-3 hover:text-blue-800"
                 />
+                <SidebarLink
+                  href="/docs/components/head"
+                  label="Head"
+                  currentPath={router.pathname}
+                  className="text-md font-semibold py-3 hover:text-blue-800"
+                />
+                
                 
 
                 {/* Add more guide links here */}

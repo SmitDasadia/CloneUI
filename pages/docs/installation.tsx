@@ -50,7 +50,7 @@ const installation = () => {
               FrameWork:
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
-              <Link href={"/framework/nextjs"}>
+              <Link href={"/docs/framework/nextjs"}>
                 <div className="p-6 border-[0.2px] rounded-lg text-center hover:bg-[#06021E]">
                   <h3 className="text-lg sm:text-xl font-semibold py-2">
                     NextJS

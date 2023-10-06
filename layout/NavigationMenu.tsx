@@ -29,14 +29,15 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <div className="md:hidden p-2 mr-4">
-          <button className="text-blue-600 mr-4">
+        <div className="md:hidden p-2 mr-4 flex items-center">
+          <span className="text-blue-600 mr-3">
             <GrGithub size={28} />
-          </button>
-          <button onClick={toggleMenu} className="text-blue-600">
+          </span>
+          <span onClick={toggleMenu} className="text-blue-600">
             {isOpen ? <CgClose size={30} /> : <CgMenuRightAlt size={30} />}
-          </button>
+          </span>
         </div>
+
         <div className="hidden sm:flex sm:justify-center sm:items-center sm:mx-auto space-x-5">
           <NavLink
             href="/docs"
@@ -45,7 +46,7 @@ const Navigation = () => {
             className=" text-xl font-semibold hover:text-blue-900"
           />
           <NavLink
-            href="/components"
+            href="/docs/components/accordion"
             label="Components"
             currentPath={router.pathname}
             className=" text-xl font-semibold hover:text-blue-900"
@@ -58,11 +59,10 @@ const Navigation = () => {
           />
         </div>
         <div className="hidden md:block p-2 mr-4">
-  <button className="text-blue-600 mr-4">
-    <GrGithub size={28} />
-  </button>
-</div>
-
+          <span className="text-blue-600 mr-4">
+            <GrGithub size={28} />
+          </span>
+        </div>
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -74,30 +74,85 @@ const Navigation = () => {
             className="md:hidden bg-[#030303] fixed top-0 left-0 right-0 bottom-0 z-50 "
           >
             <div className="container mx-auto py-4">
-              <button
+              <span
                 onClick={closeMenu}
                 className="text-blue-600 absolute top-0 right-0 p-8"
               >
                 <CgClose size={30} />
-              </button>
+              </span>
               <div className="pt-10 pb-10">
                 <NavLink
                   href="/docs"
                   label="Docs"
                   className="p-10 py-5 text-xl font-semibold"
                   currentPath={router.pathname}
+                  closeMenu={closeMenu}
                 />
                 <NavLink
-                  href="/components"
+                  href="/docs/installation"
+                  label="Installation"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+                <NavLink
+                  href="/docs/designprinciples"
+                  label="Design Principles"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+                <NavLink
+                  href="/docs/about"
+                  label="About"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+                <NavLink
+                  href=""
+                  label="Framewrok"
+                  className="p-10 py-5 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+                <NavLink
+                  href="/docs/framework/nextjs"
+                  label="NextJS"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+                <NavLink
+                  href=""
                   label="Components"
                   className="p-10 py-5 text-xl font-semibold"
                   currentPath={router.pathname}
+                  closeMenu={closeMenu}
                 />
+
+                <NavLink
+                  href="/docs/components/accordion"
+                  label="Accordion"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+
+                <NavLink
+                  href="/docs/components/head"
+                  label="Head"
+                  className="px-20 py-3 text-xl font-semibold"
+                  currentPath={router.pathname}
+                  closeMenu={closeMenu}
+                />
+
                 <NavLink
                   href="/blog"
                   label="Blog"
                   className="p-10 py-5 text-xl font-semibold"
                   currentPath={router.pathname}
+                  closeMenu={closeMenu}
                 />
               </div>
             </div>
@@ -113,6 +168,7 @@ interface NavLinkProps {
   label: string;
   currentPath: string;
   className?: string;
+  closeMenu?: () => void; // Add the closeMenu prop
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
@@ -120,16 +176,19 @@ const NavLink: React.FC<NavLinkProps> = ({
   label,
   currentPath,
   className,
+  closeMenu, // Make sure to destructure it here
 }) => (
   <Link href={href}>
     <p
       className={` ${
         currentPath === href ? "font-bold text-blue-800" : "text-white"
       } ${className}`}
+      onClick={closeMenu} // Call closeMenu when the link is clicked
     >
       {label}
     </p>
   </Link>
 );
+
 
 export default Navigation;
