@@ -27,7 +27,7 @@ const head = () => {
                   Import
                 </h2>
                 <div className="pt-2 w-full sm:w-1/2">
-                  <Code>{`import Head from 'next/head';`}</Code>
+                  <Code>{`import ReusableHead from "@/components/Head";`}</Code>
                 </div>
               </div>
 

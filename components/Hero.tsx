@@ -7,6 +7,7 @@ interface HeroProps {
   subTitle?: string;
   backgroundColor: string;
   buttonText: string;
+  buttonLink?: string;
   isButton?: boolean;
 }
 
@@ -16,6 +17,7 @@ const Hero: React.FC<HeroProps> = ({
   buttonText,
   subTitle,
   isButton,
+  buttonLink
 }) => {
   const containerStyle = {
     background: backgroundColor,
@@ -57,7 +59,7 @@ const Hero: React.FC<HeroProps> = ({
                 text={buttonText}
                 variant="primary"
                 size="small"
-                linkTo="/blog"
+                linkTo={buttonLink}
                 onClick={handleButtonClick}
                 className="font-semibold rounded-md"
               />

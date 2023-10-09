@@ -31,7 +31,7 @@ const accordion = () => {
                   Import
                 </h2>
                 <div className="pt-2">
-                  <Code>{`import { Accordion, AccordionItem } from "@/components/Accordion";`}</Code>
+                  <Code className="max-h-80  sm:max-w-lg ">{`import { Accordion, AccordionItem } from "@/components/Accordion";`}</Code>
                 </div>
               </div>
 

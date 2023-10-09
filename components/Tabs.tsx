@@ -56,7 +56,7 @@ const Tabs: React.FC<TabsProps> = ({ children, className }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className={`pt-4 p-4 ${className}`}
+          className={`pt-4 p-4 ${className} max-h-80 max-w-5xl overflow-y-auto`}
         >
           {tabs[activeTab].props.children}
         </motion.div>

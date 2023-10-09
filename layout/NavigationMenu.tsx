@@ -31,7 +31,9 @@ const Navigation = () => {
 
         <div className="md:hidden p-2 mr-4 flex items-center">
           <span className="text-blue-600 mr-3">
-            <GrGithub size={28} />
+            <Link href={"https://github.com/SmitDasadia/CloneUI"} target="_">
+              <GrGithub size={28} />
+            </Link>
           </span>
           <span onClick={toggleMenu} className="text-blue-600">
             {isOpen ? <CgClose size={30} /> : <CgMenuRightAlt size={30} />}
@@ -59,9 +61,11 @@ const Navigation = () => {
           />
         </div>
         <div className="hidden md:block p-2 mr-4">
-          <span className="text-blue-600 mr-4">
-            <GrGithub size={28} />
-          </span>
+          <Link href={"https://github.com/SmitDasadia/CloneUI"} target="_">
+            <span className="text-blue-600 mr-4">
+              <GrGithub size={28} />
+            </span>
+          </Link>
         </div>
       </div>
       <AnimatePresence>
@@ -189,6 +193,5 @@ const NavLink: React.FC<NavLinkProps> = ({
     </p>
   </Link>
 );
-
 
 export default Navigation;

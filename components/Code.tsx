@@ -3,9 +3,10 @@ import { FiCopy, FiCheck } from "react-icons/fi";
 
 interface CodeProps {
   children: string;
+  className?:string;
 }
 
-const Code: React.FC<CodeProps> = ({ children }) => {
+const Code: React.FC<CodeProps> = ({ children,className }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClick = () => {
@@ -24,8 +25,8 @@ const Code: React.FC<CodeProps> = ({ children }) => {
   };
 
   return (
-    <div className="relative">
-      <pre className="bg-[#181818] rounded-md p-4 text-white overflow-x-auto">
+    <div className={`relative ${className}`}>
+      <pre className="bg-[#181818] rounded-md p-4 text-white overflow-x-auto  overflow-y-auto">
         <code>{children}</code>
       </pre>
       <button
